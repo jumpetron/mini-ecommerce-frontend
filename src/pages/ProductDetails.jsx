@@ -18,7 +18,7 @@ const ProductDetails = () => {
     }
 
     axios
-      .get(`http://localhost:3000/products/${id}`)
+      .get(`https://mini-ecommerce-backend-blhq.onrender.com/products/${id}`)
       .then((res) => {
         if (res.data) {
           setProduct(res.data)

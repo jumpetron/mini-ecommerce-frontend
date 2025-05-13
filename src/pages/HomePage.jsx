@@ -20,13 +20,15 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/categories')
+      .get('https://mini-ecommerce-backend-blhq.onrender.com/categories')
       .then((res) => setCategories(res.data))
   }, [])
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/products', { params: filters })
+      .get('https://mini-ecommerce-backend-blhq.onrender.com/products', {
+        params: filters
+      })
       .then((res) => setProducts(res.data))
   }, [filters])
 

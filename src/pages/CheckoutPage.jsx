@@ -38,16 +38,19 @@ const CheckoutPage = () => {
     try {
       // 1. Create customer
       const customerRes = await axios.post(
-        'http://localhost:3000/customers',
+        'https://mini-ecommerce-backend-blhq.onrender.com/customers',
         customer
       )
       const customerId = customerRes.data.id
 
       // 2. Create order with cart items
-      const orderRes = await axios.post('http://localhost:3000/checkout', {
-        customer_id: customerId,
-        items: cartItems
-      })
+      const orderRes = await axios.post(
+        'https://mini-ecommerce-backend-blhq.onrender.com/checkout',
+        {
+          customer_id: customerId,
+          items: cartItems
+        }
+      )
 
       // 3. Clear cart after successful order placement
       dispatch(clearCart()) // Clear cart in Redux store

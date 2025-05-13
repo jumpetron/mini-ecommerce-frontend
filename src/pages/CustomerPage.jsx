@@ -14,7 +14,7 @@ const CustomerPage = () => {
     }
 
     axios
-      .get('http://localhost:3000/customers', {
+      .get('https://mini-ecommerce-backend-blhq.onrender.com/customers', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`
         }

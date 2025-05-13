@@ -11,10 +11,13 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3000/login', {
-        email,
-        password
-      })
+      const response = await axios.post(
+        'https://mini-ecommerce-backend-blhq.onrender.com/login',
+        {
+          email,
+          password
+        }
+      )
 
       localStorage.setItem('authToken', response.data.token)
       navigate('/customer')
